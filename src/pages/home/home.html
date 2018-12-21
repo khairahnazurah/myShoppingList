@@ -1,14 +1,53 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
+
+  <ion-navbar color="primary">
+
+    <ion-buttons left>
+      <button ion-button icon-only (click)="logout()">
+        <ion-icon name="key"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title text-center>
+    Shopping List!
     </ion-title>
+
+    <ion-buttons right>
+      <button ion-button icon-only (click)="addTask()">
+        <ion-icon name="add-circle"></ion-icon>
+      </button>
+    </ion-buttons>
+
   </ion-navbar>
+
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+<ion-list no-padding>
+  <ion-item-sliding *ngFor="let todo of todo_list">
+    <ion-item>
+
+      <h2>Item:{{todo.value.task}}</h2>
+          <h2> Quantity:  {{todo.value.quantity}}</h2>
+      <h2>Price: RM  {{todo.value.price}}</h2>
+      <br>
+      <p><strong>UPDATED:</strong> {{todo.value.timestamp | date:'shortTime'}}</p>
+    </ion-item>
+
+    <ion-item-options side="left">
+      <button ion-button color="danger" icon-only (click)="deleteButton(todo.post_key)">
+        <ion-icon name="trash"></ion-icon>
+      </button>
+    </ion-item-options>
+
+    <ion-item-options side="right">
+      <button ion-button color="secondary" icon-only (click)="editTask(todo.post_key,todo.value.task)">
+        <ion-icon name="brush"></ion-icon>
+      </button>
+    </ion-item-options>
+
+  </ion-item-sliding>
+</ion-list>
+
+
 </ion-content>

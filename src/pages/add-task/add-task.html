@@ -1,0 +1,35 @@
+<ion-header>
+
+  <ion-navbar color="dark">
+    <ion-title>Add Shopping List</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-input type="text" placeholder="Item " [(ngModel)]="task">
+    </ion-input>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-input type="number" placeholder="Quantity" [(ngModel)]="quantity">
+    </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input type="number" placeholder="Price" [(ngModel)]="price">
+    </ion-input>
+  </ion-item>
+
+  <button ion-button (click)="addTaskToFirebase()" color="primary" full>
+    Add Item
+  </button>
+  <button ion-button icon-only (click)="close()" color="danger" full>
+    <ion-icon name="close"></ion-icon>
+  </button>
+
+
+</ion-content>

@@ -1,0 +1,32 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>New User</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-input [(ngModel)]="email" type="email" placeholder="Email">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input [(ngModel)]="password1" type="password" placeholder="Password">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input [(ngModel)]="password2" type="password" placeholder="Confirm Password">
+      </ion-input>
+    </ion-item>
+  </ion-list>
+  <button ion-button block (click)="createUser()" color="primary">
+    Create User
+  </button>
+  <button ion-button icon-only block (click)="close()" color="danger">
+    <ion-icon name="close"></ion-icon>
+  </button>
+
+</ion-content>

@@ -1,0 +1,36 @@
+<ion-content padding>
+  <ion-grid>
+    <!-- company logo -->
+    <ion-row>
+      <ion-col text-center>
+        <img src="https://img.freepik.com/free-vector/fast-shopping-logo_1034-687.jpg?size=338&ext=jpg">
+      </ion-col>
+    </ion-row>
+    <!-- email -->
+    <ion-row>
+      <ion-col>
+        <ion-input type="text" [(ngModel)]="email" placeholder="Email">
+        </ion-input>
+      </ion-col>
+    </ion-row>
+    <!-- password -->
+    <ion-row>
+      <ion-col>
+        <ion-input type="password" [(ngModel)]="pass" placeholder="Password">
+        </ion-input>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+  <button ion-button full (click)="login()" icon-only color="dark">
+    <ion-icon name="key"></ion-icon>
+  </button>
+  <button ion-button full (click)="createUser()" icon-only color="primary">
+    <ion-icon name="person-add"></ion-icon>
+  </button>
+  <button ion-button full (click)="forgotPassword()" color="danger">
+    Forgot Password?
+  </button>
+
+
+</ion-content>
